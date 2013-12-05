@@ -6,7 +6,7 @@
 // See: http://stackoverflow.com/questions/13261506/getelementsbyclassname-in-ie8
 (function() {
   var indexOf = [].indexOf || function(prop) {
-    for (var i = 0; i < this.length; i++) {
+    for (var i = 0; i < this.length; i+=1) {
       if (this[i] === prop) return i;
     }
     return -1;
@@ -17,7 +17,7 @@
       var all = context.getElementsByTagName("*"),
         elements = [],
         i = 0;
-      for (; i < all.length; i++) {
+      for (; i < all.length; i+=1) {
         if (all[i].className && (" " + all[i].className + " ").indexOf(" " + className + " ") > -1 && indexOf.call(elements,all[i]) === -1) elements.push(all[i]);
       }
       return elements;
